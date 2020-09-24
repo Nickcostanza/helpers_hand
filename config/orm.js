@@ -20,7 +20,7 @@ function objToSql(ob) {
 
 const orm = {
     all: function (input, cb) {
-        let queryString = `SELECT food FROM organization`;
+        let queryString = `SELECT food, name, address FROM organization`;
         console.log(queryString);
         connection.query(queryString, function (err, res) {
             if (err) throw err;
