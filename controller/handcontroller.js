@@ -4,11 +4,11 @@ const path = require('path')
 const router = express.Router();
 
 const help = require('../models/help.js')
-
+//route to submit page
 router.get("/submit", function(req, res) {
     res.render('submit')
   });
-
+//route to the home page
 router.get('/', function(req, res) {
     help.all(function(data) {
         let hbsObj = {
@@ -57,7 +57,7 @@ router.post('api/organization', function(req, res) {
     }); 
     console.log(req.body, 'req.body')
 })
-
+//allowing the usert he ability to update there information
 router.put('/api/organization/:id', function (req, res) {
     let condition = true
     console.log(condition, 'CONDITION');
