@@ -3,9 +3,6 @@ const foodResults = document.getElementById("food-results");
 const shelterResults = document.getElementById("shelter-results");
 const healthResults = document.getElementById("health-results");
 const dailyResults = document.getElementById("daily-results");
-const router = require('../controller/handcontroller.js');
-const connection = require('../config/connection.js');
-
 
 $("#food").click(function () {
     firstQuestion.style.display = "none";

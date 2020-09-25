@@ -5,6 +5,10 @@ const router = express.Router();
 
 const help = require('../models/help.js')
 
+router.get("/submit", function(req, res) {
+    res.render('submit')
+});
+
 router.get('/', function(req, res) {
     help.allFood(function(data) {
         let hbsObj = {
