@@ -5,7 +5,7 @@
     </a>
     <form class="form-inline">
         <button class="btn btn-danger" type="button">Create a Profile</button>
-        <a href="/submit"><button class="btn btn-danger" type="button">Add a Service Organization</button></a>
+        <a href="localhost:3636/submit"><button class="btn btn-danger" type="button">Add a Service Organization</button></a>
     </form>
 </nav>
 
@@ -22,45 +22,33 @@
     <div class="container">
         <button class="btn btn-icon" id="health"><img class="main-services" src="/assets/health-icon.png"
                 width="300px"></button>
-<<<<<<< HEAD
-        <button class="btn btn-icon" id="daily" type="submit" name="daily_care" value="1"><img class="main-services"
+        <button class="btn btn-icon" id="daily" type="submit"><img class="main-services"
                 src="/assets/daily-icon.png" width="300px"></button>
     </div>
 </section>
 
-<section id="food-results">
-    {{ food-results }}
+<section id="food-results" style="display: none;">
+    <h2>Food Results</h2>
+        {{#each organization}}
+        {{#if food}}
+        {{> card-toeat devoured=false}}
+        {{/if}}
+        {{/each}}
 </section>
 
-<section id="shelter-results">
+<section id="shelter-results" style="display: none;">
+    <h2>Shelter Results</h2>
     {{ shelter-results }}
 </section>
 
-<section id="health-results">
+<section id="health-results" style="display: none;">
+    <h2>Health Results</h2>
     {{ health-results }}
 </section>
 
-<section id="daily-results">
+<section id="daily-results" style="display: none;">
+    <h2>Daily Results</h2>
     {{ daily-results }}
 </section>
-=======
-        <button class="btn btn-icon" id="daily" type="submit" name="daily_care" value="1"><img class="main-services" src="/assets/daily-icon.png"
-                width="300px"></button>
-    </div>
-</section>
-{{#each help}}
-{{> results food=this.food }}
-{{/each}}
-{{#each help}}
-{{> results daily=this.daily }}
-{{/each}}
-{{#each help}}
-{{> results health=this.health }}
-{{/each}}
-{{#each help}}
-{{> results shelter=this.shelter }}
-{{/each}}
-
->>>>>>> 7a0c4d1c39d4549210077c565f3dfee4de32424e
 
 <script src="/js/helpinghand.js"></script>
