@@ -1,7 +1,6 @@
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="/">
-        <img src="/assets/Helping-Hand-Logo.png" height="50" class="d-inline-block align-top"
-            alt="Helping Hand logo">
+        <img src="/assets/Helping-Hand-Logo.png" height="50" class="d-inline-block align-top" alt="Helping Hand logo">
         Helping Hand
     </a>
     <form class="form-inline">
@@ -18,17 +17,19 @@
 
 <form>
     <div class="container">
+        <!-- CONTACT INFORMATION -->
         <!-- Organization Name -->
-        <div class="form-group">
+        <div class="form-group col-auto">
             <label for="org_name">Organization Name</label>
             <input type="name" class="form-control" id="org_name" aria-describedby="org name"
                 placeholder="Organization's Full Name">
         </div>
-        <div class="row">
+        <!-- Phone Number and  -->
+        <div class="form-row col-auto">
             <!-- Phone Number -->
             <div class="form-group col-md-6">
                 <label for="phone">Phone Number</label>
-                <input type="phone" class="form-control" id="phone" aria-describedby="phone number"
+                <input type="phone" class="form-control" id="phone_number" aria-describedby="phone number"
                     placeholder="123.456.7890">
             </div>
             <!-- Website -->
@@ -39,40 +40,36 @@
             </div>
         </div>
         <!-- Address -->
-        <div class="form-group ">
+        <div class="form-group col-auto">
             <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St">
         </div>
-        <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Building, suite, or floor">
-        </div>
-        <div class="form-row">
+        <!-- City, State, Zip -->
+        <div class="form-row col-auto">
             <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
+                <input type="text" class="form-control" id="city">
             </div>
             <div class="form-group col-md-4">
                 <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
+                <select id="state" class="form-control">
                     <option selected>WA</option>
                     <!-- <option>...</option> -->
                 </select>
             </div>
             <div class="form-group col-md-2">
                 <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
+                <input type="text" class="form-control" id="zip">
             </div>
         </div>
-        <br>
         <!-- Hours and days of operation -->
-        <div class="form-group col-md-12" id="operationInfo">
+        <div class="form-group col-auto" id="operationInfo">
             <label for="operatingInfo">Please enter the organization's days and hours of operation</label>
             <!-- Row of dropdowns for choosing open and closing hours -->
             <div class="row">
                 <div class="form-group col-md-3">
                     <label for="openingTime">Opening Hours</label>
-                    <select id="openingHour" class="form-control">
+                    <select id="hour_open" class="form-control">
                         <option selected>Choose...</option>
                         <option>12:00 AM</option>
                         <option>1:00 AM</option>
@@ -102,7 +99,7 @@
                 </div>
                 <div class="form-group col-md-3">
                     <label for="closingTime">Closing Hours</label>
-                    <select id="closingHour" class="form-control">
+                    <select id="hour_close" class="form-control">
                         <option selected>Choose...</option>
                         <option>12:00 AM</option>
                         <option>1:00 AM</option>
@@ -161,57 +158,67 @@
                 <label class="form-check-label" for="saturdayCheck">Saturday</label>
             </div>
         </div>
-        <br>
         <!-- Serving Population Details -->
-        <label for="inlineFormInput">Min/Max Age Served</label>
-        <div class="row">
-            <div class="col-auto">
-                <input type="number" class="form-control form-control-lg mb-2" id="age_min" placeholder="18">
-            </div>
-            <div class="col-auto">
-                <input type="number" class="form-control form-control-lg mb-2" id="age_max" placeholder="55">
+        <div class=" form-group col-auto" id="age">
+            <label for="inlineFormInput">Min/Max Age Served</label>
+            <div class="row">
+                <div class="col-auto">
+                    <input type="number" class="form-control form-control-lg mb-2" id="age_min" placeholder="18">
+                </div>
+                <div class="col-auto">
+                    <input type="number" class="form-control form-control-lg mb-2" id="age_max" placeholder="55">
+                </div>
             </div>
         </div>
-
-        <!-- Dropdown for choosing service -->
+        <!-- SERVICE QUESTIONS-->
         <div class="form-group col-md-6">
+            <!-- Dropdown for Main -->
             <label for="org_type">Please select the organization's primary service</label>
             <select class="form-control" id="org_type">
                 <option selected>Choose...</option>
                 <option value="health">Health</option>
-                <option value="dailyCare">Daily Care</option>
+                <option value="daily_care">Daily Care</option>
                 <option value="food">Food</option>
                 <option value="shelter">Shelter</option>
             </select>
+            <!-- Questions for Health -->
             <div class="form-group service" id="health">
-                <p>health</p>
+                <label for="health_type">Please select the type of health services provided by your organization</label>
+                <select class="form-control" id="health_type">
+                    <option selected>Choose...</option>
+                    <option id="urgent_care" value="urgent_care">Urgent Care</option>
+                    <option id="dental" value="daily_care">Dental Health</option>
+                    <option id="behavioral" value="behavioral">Behavioral Health</option>
+                </select>
             </div>
-            <div class="form-group service" id="dailyCare">
-                <p>daily care</p>
+            <!-- Questions for Daily Care -->
+            <div class="form-group service" id="daily_care">
+                <label for="daily_care">Describe the services your organization provides.</label>
+                <textarea class="form-control" id="daily_care_info" rows="3" aria-describedby="detailed description"
+                    placeholder="Shower, laundry, dental exams, etc."></textarea>
             </div>
-            <br>
             <!-- Questions for Food -->
             <div class="form-group service" id="food">
                 <label for="foodServiceType">Please specify how you provide food.</label>
                 <select class="form-control col-md-6" id="foodServiceType">
                     <option value="default">Choose...</option>
-                    <option value="foodBank">Food Bank</option>
-                    <option value="servedMeals">Served Meals</option>
+                    <option id="food_bank" value="foodBank">Food Bank</option>
+                    <option id="meals_served" value="servedMeals">Served Meals</option>
                 </select>
                 <br>
                 <label class="mealCheck" for="mealCheck">Please specify the kinds of meals served.</label>
                 <br>
                 <div class="mealCheck">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="breakfast" value="true">
+                        <input class="form-check-input" type="checkbox" id="meals_breakfast" value="true">
                         <label class="form-check-label" for="breakfastCheck">Breakfast</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="lunch" value="true">
+                        <input class="form-check-input" type="checkbox" id="meals_lunch" value="true">
                         <label class="form-check-label" for="lunchCheck">Lunch</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="dinner" value="true">
+                        <input class="form-check-input" type="checkbox" id="meals_dinner" value="true">
                         <label class="form-check-label" for="dinnerCheck">Dinner</label>
                     </div>
                 </div>
@@ -219,22 +226,26 @@
             </div>
             <!-- Questions for Shelter -->
             <div class="form-group service" id="shelter">
+                <label class="shelterType" for="shelterType">Please select the kind of housing provided by your
+                    organization.</label>
                 <select class="form-control col-md-6" id="shelterServiceType">
                     <option value="default">Choose...</option>
-                    <option value="immediateShelter">Immediate Shelter</option>
-                    <option value="longerTermShelter">Longer-term Housing</option>
+                    <option id="shelter_immediate" value="immediateShelter">Immediate Shelter</option>
+                    <option id="shelter_longer_term" value="longerTermShelter">Longer-term Housing</option>
                 </select>
-                <label class="shelterType" for="shelterType">Please specify any restrictions, if any.</label>
+                <label for="shelterRestrictionType">Please specify any restrictions, if any.</label>
                 <select class="form-control" id="shelterType">
                     <option selected>Choose...</option>
-                    <option value="menShelter">Men only</option>
-                    <option value="womenShelter">Women only</option>
-                    <option value="familyShelter">Family &amp; Youth</option>
+                    <option id="male" value="menShelter">Men only</option>
+                    <option id="female" value="womenShelter">Women only</option>
+                    <option id="families_youth" value="familyShelter">Family & Youth</option>
+
                 </select>
             </div>
-
+            <br>
+            <!-- Submit Button -->
             <div>
-                <button type="submit" class="btn btn-primary" id="new-org">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
 </form>
