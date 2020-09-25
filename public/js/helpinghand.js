@@ -23,10 +23,14 @@ $('#daily').click(function () {
     firstQuestion.style.display = "none";
     dailyResults.style.display = "";
 
-    $.ajax("/api/results", {
+    $.ajax("/api/organization", {
         type: "GET",
-        
-    })
+        data: allFood()
+    }).then(
+        function () {
+            location.reload();
+        }
+    );
 });
 
 $("#new-org").on("click", function (event) {

@@ -4,8 +4,7 @@
         Helping Hand
     </a>
     <form class="form-inline">
-        <button class="btn btn-danger" type="button">Create a Profile</button>
-        <a href="localhost:3636/submit"><button class="btn btn-danger" type="button">Add a Service Organization</button></a>
+        <a href="/submit"><button class="btn btn-danger" type="button">Add a Service Organization</button></a>
     </form>
 </nav>
 
@@ -31,24 +30,36 @@
     <h2>Food Results</h2>
         {{#each organization}}
         {{#if food}}
-        {{> card-toeat devoured=false}}
+        {{> food-results}}
         {{/if}}
         {{/each}}
 </section>
 
 <section id="shelter-results" style="display: none;">
     <h2>Shelter Results</h2>
-    {{ shelter-results }}
+        {{#each organization}}
+        {{#if shelter}}
+        {{> shelter-results}}
+        {{/if}}
+        {{/each}}
 </section>
 
 <section id="health-results" style="display: none;">
     <h2>Health Results</h2>
-    {{ health-results }}
+        {{#each organization}}
+        {{#if health_care}}
+        {{> health-results}}
+        {{/if}}
+        {{/each}}
 </section>
 
 <section id="daily-results" style="display: none;">
     <h2>Daily Results</h2>
-    {{ daily-results }}
+        {{#each organization}}
+        {{#if daily_care}}
+        {{> daily-results}}
+        {{/if}}
+        {{/each}}
 </section>
 
 <script src="/js/helpinghand.js"></script>
