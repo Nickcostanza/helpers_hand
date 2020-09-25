@@ -1,27 +1,58 @@
-$(document).ready(function () {
+const firstQuestion = document.getElementById("first-question");
+const foodResults = document.getElementById("food-results");
+const shelterResults = document.getElementById("shelter-results");
+const healthResults = document.getElementById("health-results");
+const dailyResults = document.getElementById("daily-results");
+const router = require('../controller/handcontroller.js');
+const connection = require('../config/connection.js');
 
 
-   
+$("#food").click(function () {
+    firstQuestion.style.display = "none";
+    foodResults.style.display = "";
+});
 
-    // Food Need question tree
-    $("#food").click(function () {
-      
-        console.log('food info coming soon')
+$("#shelter").click(function () {
+    firstQuestion.style.display = "none";
+    shelterResults.style.display = "";
+});
 
-    });
+$("#health").click(function () {
+    firstQuestion.style.display = "none";
+    healthResults.style.display = "";
+});
 
+$('#daily').click(function () {
+    firstQuestion.style.display = "none";
+    dailyResults.style.display = "";
 
-    // Shelter Need question tree
-    $("#shelter").click(function () {
-      
-        console.log('shelter info coming soon')
-    });
+    $.ajax("/api/results", {
+        type: "GET",
+        
+    })
+});
 
+$("#new-org").on("click", function (event) {
+    event.preventDefault();
 
-    // Health Need question tree
-    $("#health").click(function () {
+    const newOrganization = {
+        name: $("#org-name").val().trim(),
+        address: $("#address").val().trim(),
+        city: $("#inputCity").val().trim(),
+        state: $("#inputState").val().trim(),
+        zip: $("#inputZip").val().trim(),
+        phone_number: $("#phone").val().trim(),
+        website: $("#website").val().trim()
+    };
+    console.log(newOrganization);
 
-        console.log('health info coming soon')
-    });
-
+    $.ajax("/api/organizations", {
+        type: "POST",
+        data: newOrganization
+    }).then(
+        function () {
+            console.log("created new organization");
+            location.reload();
+        }
+    );
 });

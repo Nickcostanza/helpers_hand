@@ -6,7 +6,7 @@ USE services_db;
 CREATE TABLE organization (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(40) NOT NULL,
-    address VARCHAR(60 NOT NULL,
+    address VARCHAR(60) NOT NULL,
     city VARCHAR(20) NOT NULL,
     state VARCHAR(3) NOT NULL,
     zip INT(5) NULL,

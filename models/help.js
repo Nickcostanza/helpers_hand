@@ -1,8 +1,23 @@
 const orm = require('../config/orm.js');
 
 const services = {
-    all: function(cb) {
-        orm.all('organization', function (res) {
+    allFood: function(cb) {
+        orm.allFood('organization', function (res) {
+            cb(res)
+        })
+    },
+    allShelter: function(cb) {
+        orm.allShelter('organization', function (res) {
+            cb(res)
+        })
+    },
+    allHealth: function(cb) {
+        orm.allHealth('organization', function (res) {
+            cb(res)
+        })
+    },
+    allDaily: function(cb) {
+        orm.allDaily('organization', function (res) {
             cb(res)
         })
     },
@@ -10,13 +25,7 @@ const services = {
         orm.create('organization', col, val, function(res) {
             cb(res);
         });
-    },
-    update: function(currentVal, condition, cb) {
-        orm.update('organization', currentVal, condition, function(res) {
-            cb(res);
-        });
     }
-
 };
 
 module.exports = services

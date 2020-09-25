@@ -1,7 +1,6 @@
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="/">
-        <img src="/assets/Helping-Hand-Logo.png" height="50" class="d-inline-block align-top"
-            alt="Helping Hand logo">
+        <img src="/assets/Helping-Hand-Logo.png" height="50" class="d-inline-block align-top" alt="Helping Hand logo">
         Helping Hand
     </a>
     <form class="form-inline">
@@ -23,6 +22,28 @@
     <div class="container">
         <button class="btn btn-icon" id="health"><img class="main-services" src="/assets/health-icon.png"
                 width="300px"></button>
+<<<<<<< HEAD
+        <button class="btn btn-icon" id="daily" type="submit" name="daily_care" value="1"><img class="main-services"
+                src="/assets/daily-icon.png" width="300px"></button>
+    </div>
+</section>
+
+<section id="food-results">
+    {{ food-results }}
+</section>
+
+<section id="shelter-results">
+    {{ shelter-results }}
+</section>
+
+<section id="health-results">
+    {{ health-results }}
+</section>
+
+<section id="daily-results">
+    {{ daily-results }}
+</section>
+=======
         <button class="btn btn-icon" id="daily" type="submit" name="daily_care" value="1"><img class="main-services" src="/assets/daily-icon.png"
                 width="300px"></button>
     </div>
@@ -40,5 +61,6 @@
 {{> results shelter=this.shelter }}
 {{/each}}
 
+>>>>>>> 7a0c4d1c39d4549210077c565f3dfee4de32424e
 
 <script src="/js/helpinghand.js"></script>
