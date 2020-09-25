@@ -1,7 +1,6 @@
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="/">
-        <img src="/assets/Helping-Hand-Logo.png" height="50" class="d-inline-block align-top"
-            alt="Helping Hand logo">
+        <img src="/assets/Helping-Hand-Logo.png" height="50" class="d-inline-block align-top" alt="Helping Hand logo">
         Helping Hand
     </a>
     <form class="form-inline">
@@ -23,71 +22,25 @@
     <div class="container">
         <button class="btn btn-icon" id="health"><img class="main-services" src="/assets/health-icon.png"
                 width="300px"></button>
-        <button class="btn btn-icon" id="daily" type="submit" name="daily_care" value="1"><img class="main-services" src="/assets/daily-icon.png"
-                width="300px"></button>
-    </div>
-</section>
-{{!-- 
-<section id="food-service" style="display: none;">
-    <div class="container-fluid">
-        <h1>What kind of service are you looking for?</h1>
-    </div>
-    <div class="container">
-        <form><button type="submit" class="btn btn-secondary" id="food-bank" name="food_bank" value="1">Food Bank</button></form>
-        <form><button type="submit" class="btn btn-secondary" id="served-meal" name="served_meal" value="1">Served Meal</button></form>
+        <button class="btn btn-icon" id="daily" type="submit" name="daily_care" value="1"><img class="main-services"
+                src="/assets/daily-icon.png" width="300px"></button>
     </div>
 </section>
 
-<section id="shelter-service" style="display: none;">
-    <div class="container-fluid">
-        <h1>What kind of service are you looking for?</h1>
-    </div>
-    <div class="container">
-        <form><button type="submit" class="btn btn-secondary" id="immediate" name="shelter_immediate"  value="1">Immediate Shelter</button></form>
-        <form><button type="submit" class="btn btn-secondary" id="longer-term" name="shelter_longer_term" value="1">Longer-Term Shelter</button></form>
-    </div>
+<section id="food-results">
+    {{ food-results }}
 </section>
 
-<section id="health-service" style="display: none;">
-    <div class="container-fluid">
-        <h1>What kind of service are you looking for?</h1>
-    </div>
-    <div class="container">
-        <form><button type="submit" class="btn btn-secondary" id="urgent" name="urgent_care" value="1">Urgent Care</button></form>
-        <form><button type="submit" class="btn btn-secondary" id="dental" name="dental" value="1">Emergency Dental Care</button></form>
-        <form><button type="submit" class="btn btn-secondary" id="mental" name="behavioral" value="1">Mental Health Care</button></form>
-    </div>
+<section id="shelter-results">
+    {{ shelter-results }}
 </section>
 
-<section id="gender" style="display: none;">
-    <div class="container-fluid">
-        <h1>Are you:</h1>
-    </div>
-    <div class="container">
-        <div class="btn-group-vertical">
-            <form><button type="submit" class="btn btn-secondary" id="male" name="male" value="1">Male</button></form>
-            <form><button type="submit" class="btn btn-secondary" id="female" name="female" value="1">Female</button></form>
-            <form><button type="submit" class="btn btn-secondary" id="family" name="families_youth" value="1">Family Group</button></form>
-            <form><button type="submit" class="btn btn-secondary" id="prefer-not">Prefer not to say</button></form>
-        </div>
-    </div>
+<section id="health-results">
+    {{ health-results }}
 </section>
 
-<section id="age" style="display: none;">
-    <div class="container-fluid">
-        <h1>How old are you?</h1>
-    </div>
-    <form>
-        <div class="form-row align-items-center">
-            <div class="col-auto">
-                <label class="sr-only" for="inlineFormInput">Age</label>
-                <input type="number" class="form-control form-control-lg mb-2" id="inlineFormInput" placeholder="18">
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-dark btn-lg mb-2" id="age-submit">Submit</button>
-            </div>
-        </div>
-    </form>
-</section> --}}
+<section id="daily-results">
+    {{ daily-results }}
+</section>
 
 <script src="/js/helpinghand.js"></script>
