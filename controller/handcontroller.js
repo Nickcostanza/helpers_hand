@@ -9,45 +9,45 @@ router.get("/submit", function(req, res) {
     res.render('submit');
 });
 
+// router.get('/', function(req, res) {
+//     help.allFood(function(data) {
+//         let hbsObj = {
+//             help: data
+//         };
+//         console.log("food data?" + hbsObj);
+//         res.render('index', hbsObj)
+//     });
+// });
+
+// router.get('/', function(req, res) {
+//     help.allHealth(function(data) {
+//         let hbsObj = {
+//             help: data
+//         };
+//         console.log("health data?" + hbsObj);
+//         res.render('index', hbsObj)
+//     });
+// });
+
 router.get('/', function(req, res) {
-    help.allFood(function(data) {
+    help.selectAll(function(data) {
         let hbsObj = {
             help: data
         };
-        console.log(hbsObj);
-        res.render('index', hbsObj)
+        // console.log(hbsObj); 
+        res.render('index', hbsObj);
     });
 });
 
-router.get('/', function(req, res) {
-    help.allHealth(function(data) {
-        let hbsObj = {
-            help: data
-        };
-        console.log(hbsObj);
-        res.render('index', hbsObj)
-    });
-});
-
-router.get('/', function(req, res) {
-    help.allShelter(function(data) {
-        let hbsObj = {
-            help: data
-        };
-        console.log(hbsObj);
-        res.render('index', hbsObj)
-    });
-});
-
-router.get('/', function(req, res) {
-    help.allDaily(function(data) {
-        let hbsObj = {
-            help: data
-        };
-        console.log(hbsObj);
-        res.render('index', hbsObj)
-    });
-});
+// router.get('/', function(req, res) {
+//     help.allDaily(function(data) {
+//         let hbsObj = {
+//             help: data
+//         };
+//         console.log("daily data?" + hbsObj);
+//         res.render('index', hbsObj);
+//     });
+// });
 
 router.post('api/organization', function(req, res) {
     help.create([
