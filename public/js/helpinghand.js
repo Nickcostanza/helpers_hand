@@ -24,11 +24,10 @@ $('#daily').click(function () {
     dailyResults.style.display = "";
 
     $.ajax("/api/organization", {
-        type: "GET",
-        data: allFood()
+        type: "GET"
     }).then(
-        function () {
-            location.reload();
+        function (res) {
+            console.log(res);
         }
     );
 });
@@ -47,7 +46,7 @@ $("#new-org").on("click", function (event) {
     };
     console.log(newOrganization);
 
-    $.ajax("/api/organizations", {
+    $.ajax("/api/organization", {
         type: "POST",
         data: newOrganization
     }).then(
