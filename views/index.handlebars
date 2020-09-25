@@ -22,6 +22,7 @@
     <div class="container">
         <button class="btn btn-icon" id="health"><img class="main-services" src="/assets/health-icon.png"
                 width="300px"></button>
+<<<<<<< HEAD
         <button class="btn btn-icon" id="daily" type="submit" name="daily_care" value="1"><img class="main-services"
                 src="/assets/daily-icon.png" width="300px"></button>
     </div>
@@ -42,5 +43,24 @@
 <section id="daily-results">
     {{ daily-results }}
 </section>
+=======
+        <button class="btn btn-icon" id="daily" type="submit" name="daily_care" value="1"><img class="main-services" src="/assets/daily-icon.png"
+                width="300px"></button>
+    </div>
+</section>
+{{#each help}}
+{{> results food=this.food }}
+{{/each}}
+{{#each help}}
+{{> results daily=this.daily }}
+{{/each}}
+{{#each help}}
+{{> results health=this.health }}
+{{/each}}
+{{#each help}}
+{{> results shelter=this.shelter }}
+{{/each}}
+
+>>>>>>> 7a0c4d1c39d4549210077c565f3dfee4de32424e
 
 <script src="/js/helpinghand.js"></script>
