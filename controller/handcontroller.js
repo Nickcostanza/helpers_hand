@@ -6,7 +6,7 @@ const router = express.Router();
 const help = require('../models/help.js')
 
 router.get("/submit", function(req, res) {
-    res.render('submit')
+    res.render('submit');
 });
 
 router.get('/', function(req, res) {
