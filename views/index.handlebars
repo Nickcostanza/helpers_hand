@@ -30,7 +30,7 @@
     <h2>Food Results</h2>
         {{#each organization}}
         {{#if food}}
-        {{> food-results}}
+        {{>results food-results}}
         {{/if}}
         {{/each}}
 </section>
@@ -39,7 +39,7 @@
     <h2>Shelter Results</h2>
         {{#each organization}}
         {{#if shelter}}
-        {{> shelter-results}}
+        {{>results shelter-results}}
         {{/if}}
         {{/each}}
 </section>
@@ -48,7 +48,7 @@
     <h2>Health Results</h2>
         {{#each organization}}
         {{#if health_care}}
-        {{> health-results}}
+        {{>results health-results}}
         {{/if}}
         {{/each}}
 </section>
@@ -57,7 +57,7 @@
     <h2>Daily Results</h2>
         {{#each organization}}
         {{#if daily_care}}
-        {{> daily-results}}
+        {{>results daily-results}}
         {{/if}}
         {{/each}}
 </section>

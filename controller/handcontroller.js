@@ -5,6 +5,9 @@ const router = express.Router();
 
 const help = require('../models/help.js')
 
+// router.get("/", function(req, res) {
+//     res.render('index');
+// });
 router.get("/submit", function(req, res) {
     res.render('submit');
 });
@@ -20,33 +23,33 @@ router.get('/', function(req, res) {
     });
 });
 
-router.get('/', function(req, res) {
-    help.selectAllShelter(function(data) {
-        let hbsObj = {
-            help: data
-        };
-        console.log(hbsObj); 
-        res.render('index', hbsObj);
-    });
-});
-router.get('/', function(req, res) {
-    help.selectAllHealth_care(function(data) {
-        let hbsObj = {
-            help: data
-        };
-        console.log(hbsObj); 
-        res.render('index', hbsObj);
-    });
-});
-router.get('/', function(req, res) {
-    help.selectAllDaily_care(function(data) {
-        let hbsObj = {
-            help: data
-        };
-        console.log(hbsObj); 
-        res.render('index', hbsObj);
-    });
-});
+// router.get('/shelter', function(req, res) {
+//     help.selectAllShelter(function(data) {
+//         let hbsObj = {
+//             help: data
+//         };
+//         console.log(hbsObj); 
+//         res.render('shelter-results', hbsObj);
+//     });
+// });
+// router.get('/health_care', function(req, res) {
+//     help.selectAllHealth_care(function(data) {
+//         let hbsObj = {
+//             help: data
+//         };
+//         console.log(hbsObj); 
+//         res.render('health_care', hbsObj);
+//     });
+// });
+// router.get('/daily_care', function(req, res) {
+//     help.selectAllDaily_care(function(data) {
+//         let hbsObj = {
+//             help: data
+//         };
+//         console.log(hbsObj); 
+//         res.render('daily_care', hbsObj);
+//     });
+// });
 
 router.post('api/organization', function(req, res) {
     help.create([

@@ -7,6 +7,13 @@ const dailyResults = document.getElementById("daily-results");
 $("#food").click(function () {
     firstQuestion.style.display = "none";
     foodResults.style.display = "";
+    console.log('coming soon')
+    $.ajax('/api/services/', {
+        type: 'GET',
+        data: this.data
+    }).then(function() {
+        console.log('f=data for food added')        
+    })
 });
 
 $("#shelter").click(function () {
@@ -23,8 +30,8 @@ $('#daily').click(function () {
     firstQuestion.style.display = "none";
     dailyResults.style.display = "";
 
-    $.ajax("/api/organization", {
-        type: "GET"
+    $.ajax("/api/services", {
+        type: "POST"
     }).then(
         function (res) {
             console.log(res);
