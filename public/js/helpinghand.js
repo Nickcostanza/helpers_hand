@@ -4,15 +4,17 @@ const shelterResults = document.getElementById("shelter-results");
 const healthResults = document.getElementById("health-results");
 const dailyResults = document.getElementById("daily-results");
 
-$("#food").click(function () {
+$("#food").click(function (e) {
+
     firstQuestion.style.display = "none";
-    foodResults.style.display = "";
+    foodResults.style.display = "block";
     console.log('coming soon')
     $.ajax('/api/food/', {
         type: 'GET',
         data: this.data
     }).then(function() {
-        console.log('data for food added')        
+        console.log('data for food added')   
+        location.reload();     
     })
 });
 

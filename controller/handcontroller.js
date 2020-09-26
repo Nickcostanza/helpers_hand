@@ -3,11 +3,9 @@ const path = require('path')
 
 const router = express.Router();
 
-const help = require('../models/help.js')
+const help = require('../models')
 
-router.get("/", function(req, res) {
-    res.render('index');
-});
+
 router.get("/submit", function(req, res) {
     res.render('submit');
 });
@@ -15,40 +13,33 @@ router.get("/submit", function(req, res) {
 
 
 router.get('/api/food', function(req, res) {
+    
     help.selectAllFood(function(data) {
-        let hbsObj = {
-            help: data
-        };
-        console.log(hbsObj); 
-        res.render('index', hbsObj);
+        res.json(data)
+        console.log(data);
+
     });
 });
 
 router.get('/api/shelter', function(req, res) {
     help.selectAllShelter(function(data) {
-        let hbsObj = {
-            help: data
-        };
-        console.log(hbsObj); 
-        res.render('index', hbsObj);
+        res.json(data)
+        console.log(data);
+
     });
 });
 router.get('/api/health_care', function(req, res) {
     help.selectAllHealth_care(function(data) {
-        let hbsObj = {
-            help: data
-        };
-        console.log(hbsObj); 
-        res.render('index', hbsObj);
+        res.json(data)
+        console.log(data);
+
     });
 });
 router.get('/api/daily_care', function(req, res) {
     help.selectAllDaily_care(function(data) {
-        let hbsObj = {
-            help: data
-        };
-        console.log(hbsObj); 
-        res.render('index', hbsObj);
+        res.json(data)
+        console.log(data);
+
     });
 });
 
@@ -86,4 +77,7 @@ router.post('api/organization', function(req, res) {
     }); 
 });
 
+router.get("/", function(req, res) {
+    res.render('index');
+});
 module.exports = router;
