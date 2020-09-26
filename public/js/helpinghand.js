@@ -5,7 +5,7 @@ const healthResults = document.getElementById("health-results");
 const dailyResults = document.getElementById("daily-results");
 
 $("#food").click(function () {
-    firstQuestion.style.display = "food";
+    firstQuestion.style.display = "none";
     foodResults.style.display = "";
     console.log('coming soon')
     $.ajax('/api/food/', {
@@ -46,7 +46,7 @@ $('#daily').click(function () {
         type: 'GET',
         data: this.data
     }).then(function() {
-        console.log('data fordailycare added')        
+        console.log('data for dailycare added')        
     })
 });
 

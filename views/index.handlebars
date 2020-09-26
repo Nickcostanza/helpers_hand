@@ -28,36 +28,40 @@
 
 <section id="food-results" style="display: none;">
     <h2>Food Results</h2>
-        {{#each hbsObj}}
+        {{#each help}}
         {{#if food}}
         {{> food-results}}
         {{/if}}
         {{/each}}
+        <script>
+            let help = {{help}}
+            console.log(help)
+        </script>
 </section>
 
 <section id="shelter-results" style="display: none;">
     <h2>Shelter Results</h2>
-        {{#each organization}}
+        {{#each help}}
         {{#if shelter}}
-        {{>results shelter-results}}
+        {{> shelter-results}}
         {{/if}}
         {{/each}}
 </section>
 
 <section id="health-results" style="display: none;">
     <h2>Health Results</h2>
-        {{#each organization}}
+        {{#each help}}
         {{#if health_care}}
-        {{>results health-results}}
+        {{> health-results}}
         {{/if}}
         {{/each}}
 </section>
 
 <section id="daily-results" style="display: none;">
     <h2>Daily Results</h2>
-        {{#each organization}}
+        {{#each help}}
         {{#if daily_care}}
-        {{>results daily-results}}
+        {{> daily-results}}
         {{/if}}
         {{/each}}
 </section>

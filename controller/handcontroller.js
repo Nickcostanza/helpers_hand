@@ -13,6 +13,7 @@ router.get("/submit", function(req, res) {
 });
 
 
+
 router.get('/api/food', function(req, res) {
     help.selectAllFood(function(data) {
         let hbsObj = {
