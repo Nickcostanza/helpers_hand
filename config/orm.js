@@ -35,27 +35,27 @@ const orm = {
         })
     },
     
-    // selectAllShelter: function (input, cb) {
-    //     let queryString = `SELECT id, name, address, city, state, zip, website, phone_number FROM organization WHERE shelter = 1`;
-    //     connection.query(queryString, function (err, res) {
-    //         if (err) throw err;
-    //         cb(res)
-    //     })
-    // },
-    // selectAllHealth_care: function (input, cb) {
-    //     let queryString = `SELECT id, name, address, city, state, zip, website, phone_number FROM organization WHERE health_care = 1`;
-    //     connection.query(queryString, function (err, res) {
-    //         if (err) throw err;
-    //         cb(res)
-    //     })
-    // },
-    // selectAllDaily_care: function (input, cb) {
-    //     let queryString = `SELECT id, name, address, city, state, zip, website, phone_number FROM organization WHERE daily_care = 1`;
-    //     connection.query(queryString, function (err, res) {
-    //         if (err) throw err;
-    //         cb(res)
-    //     })
-    // },
+    selectAllShelter: function (input, cb) {
+        let queryString = `SELECT id, name, address, city, state, zip, website, phone_number FROM organization WHERE shelter = 1`;
+        connection.query(queryString, function (err, res) {
+            if (err) throw err;
+            cb(res)
+        })
+    },
+    selectAllHealth_care: function (input, cb) {
+        let queryString = `SELECT id, name, address, city, state, zip, website, phone_number FROM organization WHERE health_care = 1`;
+        connection.query(queryString, function (err, res) {
+            if (err) throw err;
+            cb(res)
+        })
+    },
+    selectAllDaily_care: function (input, cb) {
+        let queryString = `SELECT id, name, address, city, state, zip, website, phone_number FROM organization WHERE daily_care = 1`;
+        connection.query(queryString, function (err, res) {
+            if (err) throw err;
+            cb(res)
+        })
+    },
     
     create: function (table, col, val, cb) {
         let queryString = 'INSERT INTO ' + table;

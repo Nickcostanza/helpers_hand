@@ -5,38 +5,49 @@ const healthResults = document.getElementById("health-results");
 const dailyResults = document.getElementById("daily-results");
 
 $("#food").click(function () {
-    firstQuestion.style.display = "none";
+    firstQuestion.style.display = "food";
     foodResults.style.display = "";
     console.log('coming soon')
-    $.ajax('/api/services/', {
+    $.ajax('/api/food/', {
         type: 'GET',
         data: this.data
     }).then(function() {
-        console.log('f=data for food added')        
+        console.log('data for food added')        
     })
 });
 
 $("#shelter").click(function () {
     firstQuestion.style.display = "none";
     shelterResults.style.display = "";
+    $.ajax('/api/shelter/', {
+        type: 'GET',
+        data: this.data
+    }).then(function() {
+        console.log('data for shelter added')        
+    })
 });
 
 $("#health").click(function () {
     firstQuestion.style.display = "none";
     healthResults.style.display = "";
+    $.ajax('/api/health_care/', {
+        type: 'GET',
+        data: this.data
+    }).then(function() {
+        console.log('data for healthcare added')        
+    })
 });
 
 $('#daily').click(function () {
     firstQuestion.style.display = "none";
     dailyResults.style.display = "";
 
-    $.ajax("/api/services", {
-        type: "POST"
-    }).then(
-        function (res) {
-            console.log(res);
-        }
-    );
+    $.ajax('/api/daily_care/', {
+        type: 'GET',
+        data: this.data
+    }).then(function() {
+        console.log('data fordailycare added')        
+    })
 });
 
 $("#new-org").on("click", function (event) {

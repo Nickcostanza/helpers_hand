@@ -28,9 +28,9 @@
 
 <section id="food-results" style="display: none;">
     <h2>Food Results</h2>
-        {{#each organization}}
+        {{#each hbsObj}}
         {{#if food}}
-        {{>results food-results}}
+        {{> food-results}}
         {{/if}}
         {{/each}}
 </section>
