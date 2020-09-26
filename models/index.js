@@ -1,6 +1,6 @@
 const orm = require('../config/orm.js');
 
-const services = {
+module.exports = {
     selectAllFood: function(cb) {
         orm.selectAllFood('organization', function (res) {
             cb(res)
@@ -8,7 +8,7 @@ const services = {
     },
     selectAllShelter: function(cb) {
         orm.selectAllShelter('organization', function (res) {
-            cb(res)
+            cb(res)                    
         })
     },
     selectAllHealth_care: function(cb) {
@@ -28,4 +28,3 @@ const services = {
     }
 };
 
-module.exports = services
